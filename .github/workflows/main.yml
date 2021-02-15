@@ -66,7 +66,7 @@ jobs:
         uses: bahmutov/npm-install@v1
 
       - name: Run semantic-release
-        run: npx semantic-release
+        run: npx semantic-release --debug
         env:
           NPM_TOKEN: ${{ secrets.ACTIONS_NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.ACTIONS_PAT }}

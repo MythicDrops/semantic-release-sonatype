@@ -16,7 +16,7 @@ This plugin requires that the project it is applied to is a Gradle project with 
 ## Install
 
 ```bash
-$ npm install --save-dev semantic-release @mythicdrops/semantic-release-gradle-config
+$ npm install --save-dev semantic-release @mythicdrops/semantic-release-sonatype
 ```
 
 ## Usage
@@ -25,6 +25,6 @@ The plugin can be configured in the [**semantic-release** configuration file](ht
 
 ```json
 {
-  "plugins": ["@mythicdrops/semantic-release-gradle-config"]
+  "plugins": ["@mythicdrops/semantic-release-sonatype"]
 }
 ```

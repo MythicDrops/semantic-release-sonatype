@@ -4,11 +4,11 @@
   "description": "semantic-release preset for MythicDrops Gradle projects.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MythicDrops/semantic-release.git"
+    "url": "git+https://github.com/MythicDrops/semantic-release-sonatype.git"
   },
-  "homepage": "https://github.com/MythicDrops/semantic-release#readme",
+  "homepage": "https://github.com/MythicDrops/semantic-release-sonatype#readme",
   "bugs": {
-    "url": "https://github.com/MythicDrops/semantic-release/issues"
+    "url": "https://github.com/MythicDrops/semantic-release-sonatype/issues"
   },
   "author": "Richard Harrah",
   "license": "MIT",

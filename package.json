@@ -1,0 +1,129 @@
+{
+  "name": "@mythicdrops/semantic-release-sonatype",
+  "version": "0.0.0-development",
+  "description": "semantic-release preset for MythicDrops Gradle projects.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MythicDrops/semantic-release.git"
+  },
+  "homepage": "https://github.com/MythicDrops/semantic-release#readme",
+  "bugs": {
+    "url": "https://github.com/MythicDrops/semantic-release/issues"
+  },
+  "author": "Richard Harrah",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14"
+  },
+  "main": "dist/index.js",
+  "module": "dist/mrm.esm.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "analyze": "size-limit --why",
+    "build": "tsdx build",
+    "commit": "cz",
+    "lint": "tsdx lint",
+    "postinstall": "is-ci || husky install",
+    "postpublish": "pinst --enable",
+    "prepare": "tsdx build",
+    "prepublishOnly": "pinst --disable",
+    "size": "size-limit",
+    "start": "tsdx watch",
+    "test": "tsdx test"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "peerDependencies": {
+    "semantic-release": ">=16.0.0 <18.0.0"
+  },
+  "dependencies": {
+    "execa": "5.0.0",
+    "promisified-properties": "2.0.15"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "11.0.0",
+    "@commitlint/config-conventional": "11.0.0",
+    "@size-limit/file": "4.9.2",
+    "@types/eslint": "7.2.6",
+    "@types/eslint-plugin-prettier": "3.1.0",
+    "@types/is-ci": "2.0.0",
+    "@types/jest": "26.0.20",
+    "@types/prettier": "2.2.1",
+    "@types/semantic-release": "17.2.0",
+    "@types/signale": "1.4.1",
+    "@typescript-eslint/eslint-plugin": "4.15.0",
+    "@typescript-eslint/parser": "4.15.0",
+    "babel-eslint": "10.1.0",
+    "commitizen": "4.2.3",
+    "cz-conventional-changelog": "3.3.0",
+    "eslint": "7.20.0",
+    "eslint-config-prettier": "7.2.0",
+    "eslint-config-react-app": "6.0.0",
+    "eslint-plugin-flowtype": "5.2.0",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-jsx-a11y": "6.4.1",
+    "eslint-plugin-prettier": "3.3.1",
+    "eslint-plugin-react": "7.22.0",
+    "eslint-plugin-react-hooks": "4.2.0",
+    "husky": "5.0.9",
+    "is-ci": "2.0.0",
+    "lerna": "3.22.1",
+    "pinst": "2.1.4",
+    "prettier": "2.2.1",
+    "prettier-plugin-organize-imports": "1.1.1",
+    "prettier-plugin-pkg": "0.8.0",
+    "pretty-quick": "3.1.0",
+    "semantic-release": "17.3.9",
+    "size-limit": "4.9.2",
+    "tsdx": "0.14.1",
+    "tslib": "2.1.0",
+    "typescript": "4.1.5"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "react-app",
+      "prettier",
+      "prettier/@typescript-eslint"
+    ],
+    "settings": {
+      "react": {
+        "version": "999.999.999"
+      }
+    }
+  },
+  "release": {
+    "branches": [
+      "main"
+    ]
+  },
+  "size-limit": [
+    {
+      "path": "dist/semantic-release-sonatype.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/semantic-release-sonatype.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "volta": {
+    "node": "14.15.5",
+    "npm": "7.5.2"
+  }
+}

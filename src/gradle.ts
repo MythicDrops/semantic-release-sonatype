@@ -46,7 +46,7 @@ export const spawnGradleTasks = (
  * @param cwd working directory
  * @param env NodeJS process environment, typically process.env
  */
-export const hasTaskToPublish = (
+export const hasPublishTasks = (
   cwd: string,
   env: NodeJS.ProcessEnv
 ): Promise<boolean> =>

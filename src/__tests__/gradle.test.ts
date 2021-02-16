@@ -1,5 +1,5 @@
 import { join } from "path";
-import { getCommand, getVersion, hasTaskToPublish } from "../gradle";
+import { getCommand, getVersion, hasPublishTasks } from "../gradle";
 
 describe("getCommand", () => {
   it("returns 'gradle' when not in gradle project", async () => {
@@ -19,15 +19,13 @@ describe("hasTaskToPublish", () => {
 
   it("resolves as false when not in gradle project", () => {
     expect.assertions(1);
-    return expect(
-      hasTaskToPublish(__dirname, process.env)
-    ).resolves.toBeFalsy();
+    return expect(hasPublishTasks(__dirname, process.env)).resolves.toBeFalsy();
   });
 
   it("resolves to true when in gradle project", () => {
     expect.assertions(1);
     return expect(
-      hasTaskToPublish(join(__dirname, "test-project"), process.env)
+      hasPublishTasks(join(__dirname, "test-project"), process.env)
     ).resolves.toBeTruthy();
   });
 });

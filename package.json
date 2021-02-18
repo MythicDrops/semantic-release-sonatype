@@ -73,7 +73,7 @@
     "eslint-plugin-react": "7.22.0",
     "eslint-plugin-react-hooks": "4.2.0",
     "husky": "5.0.9",
-    "is-ci": "2.0.0",
+    "is-ci": "3.0.0",
     "lerna": "3.22.1",
     "pinst": "2.1.4",
     "prettier": "2.2.1",

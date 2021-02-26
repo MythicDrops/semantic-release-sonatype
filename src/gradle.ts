@@ -1,8 +1,8 @@
+import AggregateError from "aggregate-error";
 import execa from "execa";
 import { access, constants } from "fs";
 import { platform } from "os";
 import { join } from "path";
-import AggregateError from "aggregate-error";
 
 const defaultPublishTasks = ["publishToSonatype", "closeAndReleaseRepository"];
 

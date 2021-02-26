@@ -44,6 +44,7 @@
     "semantic-release": ">=16.0.0 <18.0.0"
   },
   "dependencies": {
+    "aggregate-error": "3.1.0",
     "execa": "5.0.0",
     "promisified-properties": "2.0.15"
   },

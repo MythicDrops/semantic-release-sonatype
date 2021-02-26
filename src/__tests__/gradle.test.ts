@@ -1,5 +1,6 @@
+import AggregateError from "aggregate-error";
 import { join } from "path";
-import { getCommand, getVersion, hasPublishTasks } from "../gradle";
+import { getCommand, getVersion, verifyHasPublishTasks } from "../gradle";
 
 describe("getCommand", () => {
   it("returns 'gradle' when not in gradle project", async () => {
@@ -14,19 +15,21 @@ describe("getCommand", () => {
   });
 });
 
-describe("hasTaskToPublish", () => {
+describe("verifyHasPublishTasks", () => {
   jest.setTimeout(30000); // in case the gradle distribution needs to be downloaded
 
-  it("resolves as false when not in gradle project", () => {
+  it("rejects when not in gradle project", () => {
     expect.assertions(1);
-    return expect(hasPublishTasks(__dirname, process.env)).resolves.toBeFalsy();
+    return expect(verifyHasPublishTasks(__dirname)).rejects.toBeInstanceOf(
+      AggregateError
+    );
   });
 
-  it("resolves to true when in gradle project", () => {
+  it("resolves when in gradle project", () => {
     expect.assertions(1);
     return expect(
-      hasPublishTasks(join(__dirname, "test-project"), process.env)
-    ).resolves.toBeTruthy();
+      verifyHasPublishTasks(join(__dirname, "test-project"))
+    ).resolves.toBeUndefined();
   });
 });
 

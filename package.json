@@ -46,7 +46,7 @@
   "dependencies": {
     "aggregate-error": "3.1.0",
     "execa": "5.0.0",
-    "promisified-properties": "2.0.15"
+    "promisified-properties": "2.0.18"
   },
   "devDependencies": {
     "@commitlint/cli": "12.0.0",
